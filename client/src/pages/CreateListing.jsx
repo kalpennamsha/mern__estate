@@ -23,7 +23,7 @@ export default function CreateListing() {
     bathrooms: 1,
     regularPrice: 50,
     discountPrice: 0,
-    offer: false,
+    offer: true,
     parking: false,
     furnished: false,
   });
@@ -283,6 +283,7 @@ export default function CreateListing() {
                 <span className="text-xs">($ / month)</span>
               </div>
             </div>
+
             {formData.offer && (
               <div className="flex items-center gap-2">
                 <input
