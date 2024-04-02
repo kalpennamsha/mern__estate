@@ -93,11 +93,13 @@ export default function Listing() {
               {listing.name} - ₹ {listing.regularPrice.toLocaleString("en-IN")}
               {listing.type === "rent" && " / month"}
             </p>
-            <p className="text-xl font-semibold">
-              {`Final Price : ${(
-                listing.regularPrice - listing.discountPrice
-              ).toLocaleString("en-IN")}`}
-            </p>
+            {listing.offer && (
+              <p className="text-xl font-semibold">
+                {`Final Price : ₹${(
+                  listing.regularPrice - listing.discountPrice
+                ).toLocaleString("en-IN")}`}
+              </p>
+            )}
             <p className="flex items-center mt-6 gap-2 text-slate-600  text-sm">
               <FaMapMarkerAlt className="text-green-700" />
               {listing.address}
